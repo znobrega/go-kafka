@@ -6,6 +6,14 @@ import (
 	"os"
 )
 
+const (
+	kafkaConn = "10.70.65.212:9094"
+	topic     = "vnext-datahub-sarama-test"
+	topic2    = "vnext-datahub-sarama-test2"
+	topic3    = "vnext-datahub-sarama-test3"
+	topic4    = "vnext-datahub-sarama-test4"
+)
+
 func main() {
 	// create producer
 	producer, err := InitProducer()
@@ -21,10 +29,14 @@ func main() {
 		msg, _ := reader.ReadString('\n')
 
 		headers := make(map[string]string, 0)
-		headers["header_1"] = "content_1"
-		headers["carlos"] = "test"
+		headers["carlos1"] = "content"
+		headers["carlos2"] = "test"
 
-		Produce(msg, headers, producer)
+
+		Produce("PRODUCER 1 " + msg, headers, producer, topic)
+		Produce("PRODUCER 2 " + msg , headers, producer, topic2)
+		Produce("PRODUCER 3 " + msg , headers, producer, topic3)
+		Produce("PRODUCER 4 " + msg, headers, producer, topic4)
 
 		// publish with go routine
 		// go publish(msg, producer)

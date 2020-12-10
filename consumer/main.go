@@ -10,28 +10,32 @@ import (
 const (
 	kafkaConn = "10.70.65.212:9094"
 	topic     = "vnext-datahub-sarama-test"
+	topic2    = "vnext-datahub-sarama-test2"
+	topic3    = "vnext-datahub-sarama-test3"
+	topic4    = "vnext-datahub-sarama-test4"
+	consumerGroup = "datahub"
 )
 
 func main() {
-	// setup sarama log to stdout
 	sarama.Logger = log.New(os.Stdout, "", log.Ltime)
 
-	// init consumer
-	consumer, err := initConsumer()
+	//consumer, err := initConsumer()
+	//if err != nil {
+	//	fmt.Println("Error consumer goup: ", err.Error())
+	//	os.Exit(1)
+	//}
+	//defer func() {
+	//	err := consumer.Close()
+	//	if err != nil {
+	//		fmt.Println(err)
+	//	}
+	//}()
+	//
+	//consumeSync(consumer)
+
+	err := initConsumerGroup()
 	if err != nil {
 		fmt.Println("Error consumer goup: ", err.Error())
 		os.Exit(1)
 	}
-	defer func() {
-		err := consumer.Close()
-		if err != nil {
-			fmt.Println(err)
-		}
-	}()
-
-	partitionConsumer, err := consumer.ConsumePartition(topic, 0, 572)
-	if err != nil {
-		fmt.Println(69, "Failed to start partition consumer: %s", err)
-	}
-	consumeSync(partitionConsumer)
 }

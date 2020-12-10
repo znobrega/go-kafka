@@ -7,16 +7,11 @@ import (
 	"os"
 )
 
-const (
-	kafkaConn = "10.70.65.212:9094"
-	topic     = "vnext-datahub-sarama-test"
-)
+
 
 func InitProducer() (sarama.SyncProducer, error) {
-	// setup sarama log to stdout
 	sarama.Logger = log.New(os.Stdout, "", log.Ltime)
-
-	// producer config
+	
 	config := sarama.NewConfig()
 	config.Producer.Retry.Max = 5
 	config.Producer.RequiredAcks = sarama.WaitForAll
@@ -31,23 +26,19 @@ func InitProducer() (sarama.SyncProducer, error) {
 	return prd, err
 }
 
-func Produce(message string, headers map[string]string, producer sarama.SyncProducer) {
-	// publish sync
+func Produce(message string, headers map[string]string, producer sarama.SyncProducer, topic string) {
 	msg := &sarama.ProducerMessage{
 		Topic:   topic,
 		Value:   sarama.StringEncoder(message),
 		Headers: convertHeaders(headers),
 	}
-	p, o, err := producer.SendMessage(msg)
+	partition, offset, err := producer.SendMessage(msg)
 	if err != nil {
 		fmt.Println("Error publish: ", err.Error())
 	}
 
-	// publish async
-	//producer.Input() <- &sarama.ProducerMessage{
-
-	fmt.Println("Partition: ", p)
-	fmt.Println("Offset: ", o)
+	fmt.Println("Partition: ", partition)
+	fmt.Println("Offset: ", offset)
 }
 
 func convertHeaders(headers map[string]string) []sarama.RecordHeader {

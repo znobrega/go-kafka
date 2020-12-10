@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ea49436a-74dd-426a-bf2d-0e813d513614" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/consumer/consumerGroup.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/consumer.go" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/consumer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consumer/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/consumer/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/producer/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/producer/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/producer/producer.go" beforeDir="false" afterPath="$PROJECT_DIR$/producer/producer.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="/usr/lib/go-1.13" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1jpKUHfzYQ2O4P0YoGqdgx9DqfH" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Go Build.go build github.com/znobrega/go-kafka/producer">
+    <configuration name="go build github.com/znobrega/go-kafka/consumer" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-kafka" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/consumer/main.go" />
+      <package value="github.com/znobrega/go-kafka/consumer" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/znobrega/go-kafka/producer" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="go-kafka" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/producer/main.go" />
+      <package value="github.com/znobrega/go-kafka/producer" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build github.com/znobrega/go-kafka/consumer" />
+        <item itemvalue="Go Build.go build github.com/znobrega/go-kafka/producer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: sync producer and consumer" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: sync producer and consumer" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1320" height="186" key="GridCell.Tab.0.bottom" timestamp="1604625602195">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="186" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1604625602195" />
+    <state width="1320" height="186" key="GridCell.Tab.0.center" timestamp="1604625602194">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="186" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1604625602194" />
+    <state width="1320" height="186" key="GridCell.Tab.0.left" timestamp="1604625602194">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="186" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1604625602194" />
+    <state width="1320" height="186" key="GridCell.Tab.0.right" timestamp="1604625602194">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state width="1320" height="186" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1604625602194" />
+  </component>
+</project>

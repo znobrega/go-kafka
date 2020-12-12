@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	kafkaConn = "10.70.65.212:9094"
+	kafkaConn = "--"
 	topic     = "vnext-datahub-sarama-test"
 	topic2    = "vnext-datahub-sarama-test2"
 	topic3    = "vnext-datahub-sarama-test3"

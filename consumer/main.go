@@ -8,11 +8,11 @@ import (
 )
 
 const (
-	kafkaConn = "--"
-	topic     = "vnext-datahub-sarama-test"
-	topic2    = "vnext-datahub-sarama-test2"
-	topic3    = "vnext-datahub-sarama-test3"
-	topic4    = "vnext-datahub-sarama-test4"
+	kafkaConn     = "10.20.30.45:4521"
+	topic         = "vnext-datahub-sarama-test"
+	topic2        = "vnext-datahub-sarama-test2"
+	topic3        = "vnext-datahub-sarama-test3"
+	topic4        = "vnext-datahub-sarama-test4"
 	consumerGroup = "datahub"
 )
 

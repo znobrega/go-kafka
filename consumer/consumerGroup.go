@@ -7,6 +7,22 @@ import (
 	"time"
 )
 
+type ConsumerGroup interface {
+	Consume()
+}
+
+type KafkaConsumerGroup struct {
+	consumerGroup   sarama.ConsumerGroup
+	consumerHandler sarama.ConsumerGroupHandler
+}
+
+func NewKafkaConsumerGroup(consumerGroup sarama.ConsumerGroup, consumerHandler sarama.ConsumerGroupHandler) ConsumerGroup {
+	return KafkaConsumerGroup{
+		consumerGroup:   consumerGroup,
+		consumerHandler: consumerHandler,
+	}
+}
+
 func initConsumerGroup() error {
 	config := sarama.NewConfig()
 	config.Producer.Retry.Max = 5
@@ -26,15 +42,18 @@ func initConsumerGroup() error {
 		}
 	}()
 
-	consumeAndRetry(consumerGroup, consumerGroupHandler)
+	kafkaConsumerGroup := NewKafkaConsumerGroup(consumerGroup, consumerGroupHandler)
+
+	kafkaConsumerGroup.Consume()
+
 	return nil
 }
 
-func consumeAndRetry(consumerGroup sarama.ConsumerGroup, consumerHandler sarama.ConsumerGroupHandler) {
+func (c KafkaConsumerGroup) Consume() {
 	ctx := context.Background()
 	for {
 		topics := []string{topic, topic2, topic3, topic4}
-		err := consumerGroup.Consume(ctx, topics, consumerHandler)
+		err := c.consumerGroup.Consume(ctx, topics, c.consumerHandler)
 		if err != nil {
 			fmt.Printf("kafka consume failed: %v, sleeping and retry in a moment\n", err)
 			time.Sleep(time.Second)

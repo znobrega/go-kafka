@@ -7,11 +7,21 @@ import (
 	"os"
 )
 
+type Producer interface {
+	Produce(message string, headers map[string]string, topic string)
+}
 
+type KafkaProducer struct {
+	producer sarama.SyncProducer
+}
+
+func NewKafkaProducer(producer sarama.SyncProducer) Producer {
+	return KafkaProducer{producer: producer}
+}
 
 func InitProducer() (sarama.SyncProducer, error) {
 	sarama.Logger = log.New(os.Stdout, "", log.Ltime)
-	
+
 	config := sarama.NewConfig()
 	config.Producer.Retry.Max = 5
 	config.Producer.RequiredAcks = sarama.WaitForAll
@@ -26,13 +36,13 @@ func InitProducer() (sarama.SyncProducer, error) {
 	return prd, err
 }
 
-func Produce(message string, headers map[string]string, producer sarama.SyncProducer, topic string) {
+func (p KafkaProducer) Produce(message string, headers map[string]string, topic string) {
 	msg := &sarama.ProducerMessage{
 		Topic:   topic,
 		Value:   sarama.StringEncoder(message),
 		Headers: convertHeaders(headers),
 	}
-	partition, offset, err := producer.SendMessage(msg)
+	partition, offset, err := p.producer.SendMessage(msg)
 	if err != nil {
 		fmt.Println("Error publish: ", err.Error())
 	}
